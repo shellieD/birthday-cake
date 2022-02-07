@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: #fafafa;
+	font-family: 'Exo', sans-serif;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	background: #03989e url('../images/cake.png') no-repeat center center/cover;
+}
+
+h1 {
+	font-family: "Exo", sans-serif;
+	padding: 32px;
+	font-size: 50px;
+	text-align: center;
+	background: rgba(246,161,185,0.7);
+	margin-bottom: 30px;
+}
+
+p {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.button-div {
+	margin: auto;
+	width: 600px;
+	height: 90px;
+}
+
+#candle-btn {
+	margin: auto;
+	width: 600px;
+	height: 90px;
+	font-family: "Roboto", sans-serif;
+    padding: 20px;
+    font-size: 40px;
+    border-radius: 20px;
+    background: rgba(246,161,185,0.8);
+	text-align: center;
+}
+
+#candle-btn:hover {
+	background: rgba(235, 74, 120, 0.8);
+}
