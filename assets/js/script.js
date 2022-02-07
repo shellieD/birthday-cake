@@ -6,15 +6,16 @@ document.addEventListener('DOMContentLoaded', function () {
     addEventListener();
 });
 
-var candles = [];
-console.log(candles);
-
-
 function birthdayCakeCandle() {
-    let age = prompt("How old will you be on your next birthday?");
-    if (age != null) {
-        console.log(age);
-    }
+    let x = prompt("How old will you be on your next birthday?");
+    let age = parseInt(x);
+    console.log(age)
+    // create an array of random numbers between 1 & 5 as long as the age 
+    // this will 
+    let candles = Array.from({length: age}, () => Math.floor(Math.random() * 5 + 1));
+    console.log(candles);
+    candles.sort();
+    console.log(candles);
     
 }
 
