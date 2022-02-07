@@ -14,10 +14,18 @@ function birthdayCakeCandle() {
     // this will 
     let candles = Array.from({length: age}, () => Math.floor(Math.random() * 5 + 1));
     console.log(candles);
-    candles.sort();
+    candles.sort().reverse();
     console.log(candles);
-    
-}
+    let tallCandle = candles[0];
+    console.log(tallCandle);
+    let numOfCandles = 0;
+    for (i=0; i <= candles.length; i++)
+        if (candles[i] === tallCandle) {
+            numOfCandles += 1
+        };
+        console.log(numOfCandles)
+        return numOfCandles
+};
 
 function addEventListener(){
     let button = document.getElementById('candle-btn');
