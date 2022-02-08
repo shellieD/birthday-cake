@@ -58,6 +58,7 @@ h1 {
 	margin: 15px auto 15px auto;
 	border-radius: 20px;
 	text-align: center;
+	height: fit-content;
 }
 
 #container p,

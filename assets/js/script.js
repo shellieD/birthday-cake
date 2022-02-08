@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     addEventListener();
 });
 
+/**
+ * Accepts user input and converts from str to in.
+ * Creates an array of random numbers (min -1 max -5)
+ * 
+ * @returns numOfCandles
+ */
 function birthdayCakeCandle() {
     let x = prompt("How old will you be on your next birthday?");
     let age = parseInt(x);
