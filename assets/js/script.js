@@ -27,8 +27,8 @@ function birthdayCakeCandle() {
     let numOfCandles = 0;
     for (i=0; i <= candlesArr.length; i++)
         if (candlesArr[i] === tallCandle) {
-            numOfCandles += 1
-        };
+            numOfCandles += 1;
+        }
 
     document.getElementById("result-container").innerHTML = `
     <div class="candles-div">
@@ -38,12 +38,12 @@ function birthdayCakeCandle() {
     `;
 
     return numOfCandles;
-};
+}
 
 function addEventListener(){
     let button = document.getElementById('candle-btn');
     button.addEventListener('click', function () {
         birthdayCakeCandle();
     });
-};
+}
 
