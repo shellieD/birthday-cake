@@ -131,7 +131,7 @@ Once the page has automatically refreshed, the link to the successfully deployed
 * Github
 * Gitpages
 
-## Reference Material
+## Reference Material
 
 * [W3 Schools](https://www.w3schools.com/)
 * [StackOverflow](https://stackoverflow.com/)
