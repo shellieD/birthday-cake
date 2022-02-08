@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /**
  * Accepts user input and converts from str to in.
- * Creates an array of random numbers (min -1 max -5)
+ * Creates an array of random numbers (min 1 max 5) 
+ * The array length is determined by the user input
+ * Sorts array numerically then iterates through array
+ * to find how many times the largest number appears
  * 
  * @returns numOfCandles
  */
@@ -16,8 +19,9 @@ function birthdayCakeCandle() {
     let x = prompt("How old will you be on your next birthday?");
     let age = parseInt(x);
 
-    // create an array of random numbers between 1 & 5 as long as the age 
-    // this sets maximum height for candles to 5
+    // Create an array of random numbers between 1 & 5 as long as the age 
+    // This sets maximum height for candles to 5
+    // This line of code is adapted from Stack Overflow - more info in README.md
     let candles = Array.from({length: age}, () => Math.floor(Math.random() * 5 + 1));
 
     document.getElementById("container").innerHTML = `
@@ -46,10 +50,13 @@ function birthdayCakeCandle() {
     return numOfCandles;
 }
 
+/**
+ * Adds event listener to button.  When button is clicked, the 
+ * birdayCakeCandles function is called.
+ */
 function addEventListener(){
     let button = document.getElementById('candle-btn');
     button.addEventListener('click', function () {
         birthdayCakeCandle();
     });
 }
-
