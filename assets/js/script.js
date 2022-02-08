@@ -9,22 +9,35 @@ document.addEventListener('DOMContentLoaded', function () {
 function birthdayCakeCandle() {
     let x = prompt("How old will you be on your next birthday?");
     let age = parseInt(x);
-    console.log(age)
+
     // create an array of random numbers between 1 & 5 as long as the age 
-    // this will 
+    // this sets maximum height for candles to 5
     let candles = Array.from({length: age}, () => Math.floor(Math.random() * 5 + 1));
-    console.log(candles);
-    candles.sort().reverse();
-    console.log(candles);
-    let tallCandle = candles[0];
-    console.log(tallCandle);
+
+    document.getElementById("container").innerHTML = `
+    <div class="candles-div">
+    <p>You have ${age} candles</p>
+    <p>${candles}</p>
+    </div>
+    `;
+
+    let candlesArr = candles.sort().reverse();
+
+    let tallCandle = candlesArr[0];
     let numOfCandles = 0;
-    for (i=0; i <= candles.length; i++)
-        if (candles[i] === tallCandle) {
+    for (i=0; i <= candlesArr.length; i++)
+        if (candlesArr[i] === tallCandle) {
             numOfCandles += 1
         };
-        console.log(numOfCandles)
-        return numOfCandles
+
+    document.getElementById("result-container").innerHTML = `
+    <div class="candles-div">
+    <p>Your tallest candle is ${tallCandle} unit/s high</p>
+    <p>You can blow out ${numOfCandles} candles. </p>
+    </div>
+    `;
+
+    return numOfCandles;
 };
 
 function addEventListener(){
