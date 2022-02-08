@@ -5,7 +5,7 @@
 	margin: 0;
 	padding: 0;
 	border: none;
-	color: #fafafa;
+	color: #000;
 	font-family: 'Exo', sans-serif;
 }
 
@@ -23,7 +23,7 @@ h1 {
 	padding: 32px;
 	font-size: 50px;
 	text-align: center;
-	background: rgba(246,161,185,0.7);
+	background: rgba(246,161,185,0.9);
 	margin-bottom: 30px;
 }
 
@@ -41,20 +41,20 @@ h1 {
     padding: 20px;
     font-size: 40px;
     border-radius: 20px;
-    background: rgba(246,161,185,0.8);
+    background: rgba(246,161,185,0.9);
 	text-align: center;
 }
 
 #candle-btn:hover {
-	background: rgba(235, 74, 120, 0.8);
+	background: rgba(235, 74, 120, 0.9);
 }
 
 #container, 
 #result-container,
 .text-div  {
 	width: 600px;
-	background:rgba(246,161,185,0.8);
-	color: #fafafa;
+	background:rgba(246,161,185,0.9);
+	color: #000;
 	margin: 15px auto 15px auto;
 	border-radius: 20px;
 	text-align: center;
