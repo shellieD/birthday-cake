@@ -1,108 +1,138 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Birthday Candles
 
-Welcome shellieD,
+This site has been designed in response to the below problem statement:
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<i>'You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.'</i>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Link to deployed site: [Birthday Cake](https://shellied.github.io/birthday-cake/)
 
-## Gitpod Reminders
+![View](assets/screenshots/view.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## How to use the site.
 
-`python3 -m http.server`
+As a user, you are presented with a one page site with a brief description of the information that will be presented.  
 
-A blue button should appear to click: _Make Public_,
+When you click the big button, a window prompt will appear and will ask you to enter your age at your next birthday.  The site will work it's magic, provide you with the correct amount of candles for your age (each candle will be between 1 and 5 units tall) and will calculate how many candles you can blow out - only the tallest!
 
-Another blue button should appear to click: _Open Browser_.
+![Instructions](assets/screenshots/instructions.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Prompt](assets/screenshots/prompt.png)
 
-A blue button should appear to click: _Make Public_,
+![Results](assets/screenshots/results.png)
 
-Another blue button should appear to click: _Open Browser_.
+<br>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Design
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Imagery
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The background image was sourced from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6780746). Image by [Elf-Moondance](https://pixabay.com/users/elf-moondance-19728901/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6780746).
 
-------
+<br>
 
-## Release History
+### Typography
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+I used [Google Fonts](https://fonts.google.com/) to import the fonts 'Exo' and 'Roboto'.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+<br>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Colours
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+[imagecolorpicker.com](https://imagecolorpicker.com/en) was used to pick a matching colour for the background of the divs and black was used as a font-color.  I used EightShapes Contrast Grid to ensure that the text and background combinations used met the required contrast ratios in compliance with [WCAG 2.0 minimum contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![Contrast Grid](assets/screenshots/contrast-grid.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<br>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Testing
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Testing has taken place continously throughout the development of this site.  When creating the JavaScript, Console.logs were used regularly to ensure that expected outcomes were achieved and if the outcome produced was not as expected, debugging was undertaken at that point.  
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Chrome Dev Tools was used to check how the HTML and CSS styles looked in the browser and this was regularly tweaked throughout the build.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Resolved Issues
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The code I initially used to create the candles[] would use produce the correct output, i.e an array the length of the age of the user with the maximum number being 5, however it would also produce 0 as a random number. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+`
+let candles = Array.from({length: age}, () => Math.floor(Math.random() * 5));
+`
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+To fix this, I simply added + 1 so that the minimum 'candle height' would be 1.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+`
+let candles = Array.from({length: age}, () => Math.floor(Math.random() * 5 + 1));
+`
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<br>
 
-------
+### Issues
 
-## FAQ about the uptime script
+* If you enter an age over 20, the candles array breaks out of the div and looks untidy.  However, as the problem statement suggests that this is for a child's birthday cake and taking into consideration the time constraints, this is something that will not be fixed for now. (screenshot below)
 
-**Why have you added this script?**
+* This project has not been designed from a mobile-first perspective, so media queries will need to be impletemented for this to work effectively on a mobile phone.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Issue Screenshot](assets/screenshots/issue.png)
 
-**How will this affect me?**
+### Validators
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+All code has been passed through the relevant validators and no errors have been found:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+<details>
+<summary>JShint</summary>
+<br>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![JShint](assets/screenshots/jshint.png)
+</details>
 
-**So….?**
+<br>
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+<details>
+<summary>W3C HTML Validator</summary>
+<br>
 
-**Can I opt out?**
+![W3C HTML Validator](assets/screenshots/html.png)
+</details>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<br>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<details>
+<summary>W3C CSS Validator</summary>
+<br>
 
-**Anything more?**
+![W3C CSS Validator](assets/screenshots/css.png)
+</details>
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<br>
 
----
+* The website was loaded into Wave to produce an accessibility report. No errors were found. The report can be found here: [Wave Accessibility Report](https://wave.webaim.org/report#/https://shellied.github.io/birthday-cake/)
 
-Happy coding!
+* Lighthouse in Chrome Dev Tools was used to test the performance, accessibility, best practices and SEO scores and gave perfect scores:
+
+![Lighthouse Scores](assets/screenshots/lighthouse.png)
+
+
+## Deployment
+
+This site was deployed to GitHub pages. The steps taken to deploy the site are as follows:
+
+In the GitHub repository, select the settings menu
+Choose the pages tab on the left hand side menu
+From the source section drop-down menu, select the 'Main' branch
+Once the page has automatically refreshed, the link to the successfully deployed page will be displayed.
+
+## Technologies Used
+
+* HTML
+* CSS
+* Javascript
+* Gitpod
+* Github
+* Gitpages
+
+## Reference Material
+
+* [W3 Schools](https://www.w3schools.com/)
+* [StackOverflow](https://stackoverflow.com/)
+* [Google](https://www.google.co.uk/)
